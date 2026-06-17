@@ -173,13 +173,13 @@
         </div>
     </section>
 
-    <section class="publications" id="publications">
+    <section class="academia">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
+            <h2 class="section-title" id="publications">Publications</h2>
+            <div id="publications-list" class="timeline"></div>
         </div>
         <div class="container">
-            <h2 class="section-title">Other Academic Contributions</h2>
-
+            <h2 class="section-title" id="misc_academic">Other Academic Contributions</h2>
         </div>
     </section>
 
@@ -196,6 +196,7 @@
         </div>
     </footer>
 
+    <script src="data/articles.js"></script>
     <script>
         document.querySelectorAll('.work-toggle').forEach(button => {
             button.addEventListener('click', () => {
@@ -204,6 +205,89 @@
                 button.setAttribute('aria-expanded', expanded);
             });
         });
+
+        (function () {
+            const container = document.getElementById('publications-list');
+            if (!container) return;
+
+            const articles = ARTICLES_DATA;
+
+            const timelineLine = document.createElement('div');
+            timelineLine.className = 'timeline-line';
+            container.appendChild(timelineLine);
+
+            for (const article of articles) {
+                if (typeof article.title !== 'string' || !article.title.trim()) continue;
+                if (typeof article.venue !== 'string' || !article.venue.trim()) continue;
+                if (typeof article.authors !== 'string' || !article.authors.trim()) continue;
+
+                const tags = [];
+                for (const [field, label] of [
+                    ['link_hal', 'HAL'],
+                    ['link_arxiv', 'arXiv'],
+                    ['link_code', 'Code'],
+                    ['link_hf', 'Models'],
+                ]) {
+                    const val = article[field];
+                    if (typeof val === 'string' && val.trim()) tags.push({ href: val, label });
+                }
+                if (article.link_pub && typeof article.link_pub === 'object') {
+                    const { link, name } = article.link_pub;
+                    if (typeof link === 'string' && link.trim() && typeof name === 'string' && name.trim()) {
+                        tags.push({ href: link, label: name });
+                    }
+                }
+
+                const card = document.createElement('div');
+                card.className = 'pub-card';
+
+                const content = document.createElement('div');
+                content.className = 'pub-content';
+
+                const titleEl = document.createElement('h3');
+                titleEl.className = 'pub-title';
+                titleEl.textContent = article.title;
+
+                const authorsEl = document.createElement('h4');
+                authorsEl.className = 'pub-authors';
+                authorsEl.textContent = article.authors;
+
+                const venueEl = document.createElement('p');
+                venueEl.className = 'pub-venue';
+                const em = document.createElement('em');
+                em.textContent = article.venue;
+                venueEl.appendChild(em);
+
+                content.append(titleEl, authorsEl, venueEl);
+
+                if (tags.length > 0) {
+                    const tagsDiv = document.createElement('div');
+                    tagsDiv.className = 'pub-tags';
+                    for (const { href, label } of tags) {
+                        const a = document.createElement('a');
+                        a.className = 'pub-tag';
+                        a.href = href;
+                        a.textContent = label;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        tagsDiv.appendChild(a);
+                    }
+                    content.appendChild(tagsDiv);
+                }
+
+                card.appendChild(content);
+
+                const item = document.createElement('article');
+                item.className = 'timeline-item';
+                const dot = document.createElement('div');
+                dot.className = 'timeline-dot';
+                const timelineContent = document.createElement('div');
+                timelineContent.className = 'timeline-content';
+                timelineContent.appendChild(card);
+                item.append(dot, timelineContent);
+                container.appendChild(item);
+            }
+        })();
     </script>
 
 </body>
