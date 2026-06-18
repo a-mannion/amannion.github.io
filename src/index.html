@@ -176,16 +176,23 @@
     <section class="academia">
         <div class="container">
             <h2 class="section-title" id="publications">Publications</h2>
-            <div id="publications-list" class="timeline"></div>
+            <div class="timeline" id="publications-list"></div>
         </div>
         <div class="container">
-            <h2 class="section-title" id="misc_academic">Other Academic Contributions</h2>
+            <h2 class="section-title" id="misc-academic">Other Academic Contributions</h2>
+            <div class="misc-list" id="misc-academic-list">
+                <ul>
+                    <li><b>Reviewer</b> for the European Conference on Information Retrieval (ECIR) 2026.</li>
+                    <li><b>Publicity chair</b> for the Conference and Labs of the Evaluation Forum (CLEF) 2024.</li>
+                    <li><b>Reviewer</b> for the SIGIR Conference on Research and Development in Information Retrieval 2023.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <footer class="footer" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="footer-title">Get In Touch</h2>
             <p class="contact-subtitle">I'm always open to discussing new projects or opportunities.</p>
             <div class="contact-links">
                 <a href="mailto:aidan.mannion@univ-grenoble-alpes.fr" class="contact-link">aidan.mannion@univ-grenoble-alpes.fr</a>
@@ -217,6 +224,7 @@
             container.appendChild(timelineLine);
 
             for (const article of articles) {
+                if (article.hide === true) continue;
                 if (typeof article.title !== 'string' || !article.title.trim()) continue;
                 if (typeof article.venue !== 'string' || !article.venue.trim()) continue;
                 if (typeof article.authors !== 'string' || !article.authors.trim()) continue;

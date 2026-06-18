@@ -156,7 +156,7 @@ body {
 .section-title {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: left;
     font-weight: 600;
 }
 
@@ -422,6 +422,43 @@ body {
     color: white;
 }
 
+/* Misc Academic List */
+.misc-list {
+    position: relative;
+    padding-left: 60px;
+    list-style: none;
+}
+
+.misc-list::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.misc-list-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0.25rem 0;
+}
+
+.misc-list-item::before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid var(--color-accent);
+    border-radius: 50%;
+    z-index: 2;
+}
+
 /* Contact Section: Footer */
 .footer {
     background: var(--color-bg);
@@ -430,6 +467,13 @@ body {
     padding: 2rem;
     color: var(--color-text-muted);
     font-size: 0.9rem;
+}
+
+.footer-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 .contact-subtitle {
@@ -493,6 +537,21 @@ body {
     }
 
     .timeline-dot {
+        left: -40px;
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+    }
+
+    .misc-list {
+        padding-left: 40px;
+    }
+
+    .misc-list::before {
+        left: 9px;
+    }
+
+    .misc-list-item::before {
         left: -40px;
         width: 16px;
         height: 16px;

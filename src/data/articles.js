@@ -7,17 +7,19 @@ const ARTICLES_DATA = [
         "link_arxiv": "https://arxiv.org/abs/2604.06903",
         "link_pub": null,
         "link_code": "https://github.com/PARTAGES-dev/partages-llm",
-        "link_hf": "https://huggingface.co/collections/PARTAGES-dev/qwen3pdaptslerp"
+        "link_hf": "https://huggingface.co/collections/PARTAGES-dev/qwen3pdaptslerp",
+        "hide": false
     },
     {
         "title": "Pantagruel: Unified Self-Supervised Encoders for French Text and Speech",
-        "venue": "The Fifteenth Language Resources and Evaluation Conference (LREC 2026), ELRA, May 2026, Palma, Spain",
+        "venue": "The Fifteenth Language Resources and Evaluation Conference (LREC 2026), May 2026, Palma, Spain",
         "authors": "Phuong-Hang Le, Valentin Pelloin, Arnault Chatelain, Maryem Bouziane, Mohammed Ghennai, Qianwen Guan, Kirill Milintsevich, Salima Mdhaffar, Aidan Mannion, Nils Defauw, et al.",
         "link_hal": "https://hal.science/hal-05627744",
         "link_arxiv": "https://arxiv.org/abs/2601.05911",
         "link_pub": null,
         "link_code": null,
-        "link_hf": "https://huggingface.co/PantagrueLLM/collections"
+        "link_hf": "https://huggingface.co/PantagrueLLM/collections",
+        "hide": false
     },
     {
         "title": "Jargon: A Suite of Language Models and Evaluation Tasks for French Specialized Domains",
@@ -30,7 +32,8 @@ const ARTICLES_DATA = [
             "name": "ACL Anthology"
         },
         "link_code": "https://github.com/PantagrueLLM/Jargon",
-        "link_hf": "https://huggingface.co/collections/PantagrueLLM/jargon-text-models"
+        "link_hf": "https://huggingface.co/collections/PantagrueLLM/jargon-text-models",
+        "hide": false
     },
     {
         "title": "MedDialog-FR: a French Version of the MedDialog Corpus for Multi-label Classification and Response Generation related to Women's Intimate Health",
@@ -43,7 +46,8 @@ const ARTICLES_DATA = [
             "name": "ACL Anthology"
         },
         "link_code": null,
-        "link_hf": null
+        "link_hf": null,
+        "hide": false
     },
     {
         "title": "Université Grenoble Alpes/LIG at TREC Deep Learning Track 2022",
@@ -56,11 +60,12 @@ const ARTICLES_DATA = [
             "name": "Conference Proceedings"
         },
         "link_code": null,
-        "link_hf": null
+        "link_hf": null,
+        "hide": false
     },
     {
         "title": "UMLS-KGI-BERT: Data-Centric Knowledge Integration in Transformers for Biomedical Entity Recognition",
-        "venue": "5th Clinical Natural Language Processing Workshop, 5th Clinical Natural Language Processing Workshop, Jul 2023, Toronto, Canada",
+        "venue": "5th Clinical Natural Language Processing Workshop, Jul 2023, Toronto, Canada",
         "authors": "Aidan Mannion, Didier Schwab, Lorraine Goeuriot, Thierry Chevalier",
         "link_hal": "https://hal.science/hal-04167619",
         "link_arxiv": "https://arxiv.org/abs/2307.11170",
@@ -69,7 +74,8 @@ const ARTICLES_DATA = [
             "name": "ACL Anthology"
         },
         "link_code": "https://github.com/a-mannion/bertify-umls",
-        "link_hf": "https://huggingface.co/collections/a-mannion/umls-kgi-bert"
+        "link_hf": "https://huggingface.co/collections/a-mannion/umls-kgi-bert",
+        "hide": false
     },
     {
         "title": "Augmentation des modèles de langage français par graphes de connaissances pour la reconnaissance des entités biomédicales",
@@ -79,7 +85,8 @@ const ARTICLES_DATA = [
         "link_arxiv": null,
         "link_pub": null,
         "link_code": null,
-        "link_hf": null
+        "link_hf": null,
+        "hide": false
     },
     {
         "title": "Predicting the Risk of & Time to Impairment for ALS patients: Report for the Lab on Intelligent Disease Progression Prediction at CLEF 2022",
@@ -92,7 +99,8 @@ const ARTICLES_DATA = [
             "name": "Workshop Proceedings"
         },
         "link_code": "",
-        "link_hf": ""
+        "link_hf": "",
+        "hide": false
     },
     {
         "title": "Identification de profil clinique du patient: Une approche de classification de séquences utilisant des modèles de langage français contextualisés",
@@ -102,7 +110,8 @@ const ARTICLES_DATA = [
         "link_arxiv": null,
         "link_pub": null,
         "link_code": "https://github.com/a-mannion/deft21",
-        "link_hf": null
+        "link_hf": null,
+        "hide": false
     },
     {
         "title": "LIG-Health at Adhoc and Spoken IR Consumer Health Search: expanding queries using UMLS and FastText",
@@ -115,7 +124,8 @@ const ARTICLES_DATA = [
             "name": "Workshop Proceedings"
         },
         "link_code": null,
-        "link_hf": null
+        "link_hf": null,
+        "hide": false
     },
     {
         "title": "",
@@ -128,6 +138,7 @@ const ARTICLES_DATA = [
             "name": ""
         },
         "link_code": "",
-        "link_hf": ""
+        "link_hf": "",
+        "hide": false
     }
 ];
